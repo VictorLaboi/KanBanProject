@@ -1,0 +1,18 @@
+<div class="form-container">
+    <h2>Agregar Fadsdadsae/Tarea</h2>
+    <form [formGroup]="formUser" (ngSubmit)="procesar()">
+        <label for="encargado">Nombre de fase</label>
+        <input type="text" formControlName="nameFase" id="fase" name="fase">
+
+        <label for="encargado">Encargado (opcional)</label>
+        <input type="text" formControlName="encargado" id="encargado" name="encargado">
+
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" formControlName="descripcion" name="descripcion"></textarea>
+        
+        <div class="button-container">
+            <button type="" class="cancel">Cancelar</button>
+            <button type="submit" class="accept">Aceptar</button>
+        </div>
+    </form>
+</div>

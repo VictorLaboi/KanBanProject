@@ -1,0 +1,10 @@
+<div class="form-container">
+   <select class="form-select" aria-label="Default select example">
+      <option selected>Mover Prioridad</option>
+      @if(titulosDeLayout){
+         @for (layouts of titulosDeLayout; track $index) {
+            <option value='$index'>{{layouts.nameTarea}}</option>
+         }
+      }
+    </select>
+</div>

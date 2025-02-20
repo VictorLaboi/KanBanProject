@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="header">
+    {{title}}
+    <div class="deleteControl">
+      <button class="btnEliminar" (click)="eliminarFase()">X</button>
+    </div>
+  </div>
+  <div class="tasks-container">
+    <ng-container *ngIf="descTareas.length != 0">
+      <ng-container *ngFor="let item of descTareas; let i = index">
+        <app-tarea-visible-layout [tituloDeTarea]="item.nameTarea" [descripcion]="item.descripcion"
+                                  (eliminar)="eliminarTareas(i)">
+        </app-tarea-visible-layout>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="agregarTar">
+      <div class="pop-up-form">
+        <div class="popup">
+          <app-homework-form (cancelarBoton)="cancelarTarea($event)" (enviarDatos)="recibirDatos($event)"></app-homework-form>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="addControl">
+    <button class="btnAgregar" (click)="agregarT()">Nuevo</button>
+  </div>     
+</div>

@@ -1,0 +1,16 @@
+<div class="form-container">
+    <h2>Agregar fase/tarea</h2>
+    <form (ngSubmit)="submitForm()">
+      <label for="fase">Nombre de tarea</label>
+      <input type="text" id="fase" name="fase" [formControl]="nameFase">
+  
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" name="descripcion" [formControl]="descripcion"></textarea>
+  
+      <div class="button-container">
+        <button type="button" (click)="btnCancelar()" class="cancel">Cancelar</button>
+        <button type="submit" class="accept">Aceptar</button>
+      </div>
+    </form>
+  </div>
+  
