@@ -10,7 +10,7 @@ import { TareaVisibleLayoutComponent } from './Controles/tarea-visible-layout/ta
 import { TareaVisibleExpandibleComponent } from './Controles/tarea-visible-expandible/tarea-visible-expandible.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
-import { MovementControllerComponent } from './Controles/movement-controller/movement-controller.component';
+// import { MovementControllerComponent } from './Controles/movement-controller/movement-controller.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,6 @@ import { MovementControllerComponent } from './Controles/movement-controller/mov
     HomeworkFormComponent,
     TareaVisibleLayoutComponent,
     TareaVisibleExpandibleComponent,
-    MovementControllerComponent,
   ],
   imports: [
     BrowserModule,

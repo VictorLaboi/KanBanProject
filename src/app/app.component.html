@@ -26,7 +26,7 @@
                href="#">Agregar Kanban</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Repo Github</a>
+            <a class="nav-link" href="https://github.com/VictorLaboi/KanBanProject/tree/master" target="_blank">Repo Github</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Disabled</a>
@@ -35,12 +35,6 @@
       </div>
     </div>
   </nav>
-  <div class="pop-up-form" *ngIf="pressed">
-    <div class="popup">
-      <app-movement-controller></app-movement-controller>
-      <!-- <app-homework-form (cancelarBoton)="cancelarFormulario($event)" (enviarDatos)="recibirFormulario($event)"></app-homework-form> -->
-    </div>
-  </div>
   <div class="pop-up-form" *ngIf="kanBanPressed">
     <div class="popup">
       <app-homework-form (cancelarBoton)="cancelarFormulario($event)" (enviarDatos)="recibirFormulario($event)"></app-homework-form>

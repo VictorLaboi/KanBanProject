@@ -32,9 +32,6 @@ export class KanvanLayoutComponent {
       this.agregarTar = cancel; 
     }
 
-
-
-
     @Output() eliminar = new EventEmitter<void>(); 
     @Output() agregar = new EventEmitter<boolean>(); 
 
@@ -47,6 +44,10 @@ export class KanvanLayoutComponent {
     }
     eliminarTareas(index:number){
       this.descTareas.splice(index, 1);
+    }
+
+    filtrarTareas(){
+      this.descTareas.filter(t=> t.nameTarea === "")
     }
 
     recibirDatos(datos:{nameTarea:string, descripcion:string}){

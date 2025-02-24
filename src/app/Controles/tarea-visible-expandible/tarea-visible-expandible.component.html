@@ -10,6 +10,13 @@
     </div>
 
     <div class="form-group">
+      <label for="layoutColor">Estado</label>
+      <select id="layoutColor" class="form-select" formControlName="layoutColor" (change)="onSelectChange($event)">
+        <option *ngFor="let layout of colores" [value]="layout">{{ layout }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
       <label for="descripcion">Descripción</label>
       <textarea id="descripcion" formControlName="descripcion" class="form-control"></textarea>
     </div>

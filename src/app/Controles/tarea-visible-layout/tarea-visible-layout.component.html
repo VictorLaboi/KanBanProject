@@ -1,4 +1,4 @@
-<div class="kanban-card">
+<div class="kanban-card" [ngClass]="estados()">
   <div class="menu-icon" (click)="eliminarTarea()">
   </div>
   <div class="title">{{tituloDeTarea}}</div>  
@@ -8,7 +8,6 @@
 @if(cerrarPopUp === true){
   <div class="pop-up-form">
     <div class="popup">
-      <app-movement-controller></app-movement-controller>
       <app-tarea-visible-expandible [tituloTarea]="tituloDeTarea" [descripcion]="descripcion" (valores)="recibirDatos($event)"
       (cerrar)="abrirPop($event)"
       ></app-tarea-visible-expandible>

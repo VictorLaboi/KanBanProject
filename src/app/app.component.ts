@@ -16,7 +16,10 @@ export class AppComponent implements OnInit {
   pressed:boolean = false;
 
   ngOnInit(): void {
-    this.enviarDatos();
+    this.loadData();
+    if (this.formData.length > 0) {
+      this.enviarDatos();
+    }
   }
   constructor(private  communication:CommunicationServicesService) {
   }
@@ -34,14 +37,26 @@ export class AppComponent implements OnInit {
     this.kanBanPressed = estado;
   }
   recibirFormulario(data: { nameTarea: string, descripcion: string }){
-    if(this.formData.length < 3){
-      this.formData.push(data)
+    if (this.formData.length < 3) {
+      this.formData.push(data);
+      this.saveData();  // Guarda el estado actualizado
     }
-    this.kanBanPressed = false; 
+    this.kanBanPressed = false;
   }
 
   eliminarLayout(index:number){
     this.formData.splice(index, 1);
+    this.saveData();
   }
 
+  saveData(){
+    localStorage.setItem('kanbanLayout', JSON.stringify(this.formData));
+  }
+
+  loadData(){
+    const estadoLayout =  localStorage.getItem('kanbanLayout');
+    if(estadoLayout){
+      this.formData = JSON.parse(estadoLayout);
+    }
+  }
 }

@@ -7,11 +7,13 @@
   </div>
   <div class="tasks-container">
     <ng-container *ngIf="descTareas.length != 0">
-      <ng-container *ngFor="let item of descTareas; let i = index">
-        <app-tarea-visible-layout [tituloDeTarea]="item.nameTarea" [descripcion]="item.descripcion"
-                                  (eliminar)="eliminarTareas(i)">
-        </app-tarea-visible-layout>
-      </ng-container>
+      @for (item of descTareas; track $index) {
+        <ng-container>
+          <app-tarea-visible-layout [tituloDeTarea]="item.nameTarea" [descripcion]="item.descripcion"
+                                    (eliminar)="eliminarTareas($index)">
+          </app-tarea-visible-layout>
+        </ng-container>
+      }
     </ng-container>
     <ng-container *ngIf="agregarTar">
       <div class="pop-up-form">
